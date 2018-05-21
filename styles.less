@@ -1,0 +1,129 @@
+//BASIC STYLING FOR ALL DEVICES:
+
+//Color scheme:
+@ultraLight: lighten(@medium, 35);//
+@light: lighten(@medium, 15);
+@medium: #fff;//#C8BEBA;90A4AE
+@dark: darken(@medium, 15);
+@ultraDark: darken(@medium, 35);
+
+@maxWidth: 1200px;
+
+@contentPadding: 10px;
+@contentPaddingM10: (@contentPadding - 10);
+
+@generalPadding_4: 4px;
+@generalPadding_8: 8px;
+@generalPadding_12: 12px;
+@generalPadding_16: 16px;
+
+img {
+    max-width: 100%;
+}
+
+
+//Body-element styling
+.app { 
+    background-color: @dark;
+    background-color: @ultraLight;
+    padding: @generalPadding_8;
+    font-size: 1.3em;
+    color: @ultraDark;
+    align-content: center;
+    max-width: @maxWidth;
+    margin-left: auto;
+    margin-right: auto;
+    //border: 12px solid @light
+}
+/*Container in App*/
+.content {
+    background-color: @ultraLight;
+    padding: @generalPadding_8;
+}
+div {
+    background-color: @medium;
+}
+//Directive-specific styling
+.directive {
+    background-color: @ultraDark;
+    padding: 12px;
+    font-size: 1.3em;
+    color: @ultraLight;
+}
+
+.tableDiv {
+    //padding-left: @generalPadding_8;
+    padding-top: @generalPadding_8;
+    padding-bottom: @generalPadding_8;
+    background-color: @ultraLight;
+    overflow: hidden;
+}
+
+.col_3of4 {
+    float:left;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    border: 2px solid @ultraLight;
+    width: (100% / 4 * 3); // 100% / antal kollonner
+    padding: 4px;
+}
+.col_1of4 {
+    float:left;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    border: 2px solid @ultraLight;
+    width: (100% / 4); // 100% / antal kollonner
+    padding: 4px;
+}
+//BOOTSTRAP MODIFICATIONS
+.navbar-default .navbar-brand, .navbar-default .navbar-brand{color:@ultraDark;}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{color:@ultraLight;}
+.navbar-default .navbar-nav>li>a {color: @ultraDark;}
+.navbar-default .navbar-nav>li>a:hover {color:@ultraLight;}
+
+//MEDIA QUERIES SPECIFIC (BOOTSTRAP BASED)
+
+//Miinimum SIZE
+@media (max-width: 767px){ //mindre en 768 px width
+    .app { 
+        font-size: 1.5em;
+    }
+    .col {
+        float:none;
+        width: 100%;
+    }
+    .content {
+    background-color: @ultraLight;
+    padding: @generalPadding_8;
+    }
+    .tableDiv {
+    padding: @contentPaddingM10;
+    //padding-right: contentPaddingM10;
+    background-color: @ultraLight;
+    overflow: hidden;
+    }
+}
+@media (min-width: 768px){
+    .container {
+        width: 100%;
+    }
+}
+
+//Medium SIZE
+@media (min-width: 992px){
+    .container {
+        width: 100%;
+    }
+}
+
+//Max SIZE
+@media (min-width: 1200px){
+    .container {
+        width: 100%;
+    }
+}
+
+
+
